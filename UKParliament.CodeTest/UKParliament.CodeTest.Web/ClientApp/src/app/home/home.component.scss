@@ -1,0 +1,24 @@
+.headingContainer {
+  padding: 4px;
+  margin-bottom: 8px;
+}
+
+.headline { margin: 0px; }
+
+mat-card {
+  width: 300px;
+  border: solid #eeeeee 0.5px
+}
+
+.personDetailsTable {
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+
+.editPersonButton {
+  margin-left: 20px;
+}
+
+.deletePersonButton {
+  margin-left: 10px;
+}

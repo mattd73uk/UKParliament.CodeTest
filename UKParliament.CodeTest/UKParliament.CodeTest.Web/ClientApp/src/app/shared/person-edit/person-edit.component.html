@@ -1,0 +1,30 @@
+<mat-dialog-content class="mat-typography" style="width: 400px;">
+
+  <form #personForm="ngForm">
+    <mat-form-field [style.width.px]=250>
+      <input matInput type="text" name="name" required maxlength="25" placeholder="Name" [(ngModel)]="data.name" />
+    </mat-form-field>
+
+    <mat-form-field [style.width.px]=250>
+      <input matInput type="text" name="address" required maxlength="25" placeholder="Address" [(ngModel)]="data.address" />
+    </mat-form-field>
+
+    <mat-form-field [style.width.px]=250>
+      <input matInput type="text" name="favouriteIceCream" required maxlength="25" placeholder="Fave Ice Cream" [(ngModel)]="data.favouriteIceCream" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" name="dateOfBirth" [(ngModel)]="data.dateOfBirth" required [min]="minDate" [max]="maxDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="data"
+          [disabled]="!personForm.form.valid">
+    {{ data.id === undefined ? "Save" : "Close" }}
+  </button>
+</mat-dialog-actions>

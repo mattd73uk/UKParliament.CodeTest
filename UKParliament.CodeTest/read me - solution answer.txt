@@ -1,0 +1,43 @@
+Hi!
+
+Thank you for setting the challenge.  As I'm drawing to a close 
+there are various points I'd like to make...
+
+I hope it's ok that I upgraded the version of Angular to Angular 9.  
+This was so I could use its Ivy engine and therefore the Chrome Angular Developer tools.
+This also had the impact of cutting vulnerabilities reported by npm audit by 25%.
+I could have carried on going with updating up to version 12 to continue to reduce the vulns, 
+but didn't think that was what the test was primarily about.
+
+I moved the Person domain class to its own project to be in line with Clean Architecture.
+
+I used the EF context as concrete in Services... I put in a little "debate" comment in there
+on the pros and cons.
+
+On testing:
+- I did add two Selenium system tests to get the ball rolling, but clearly more are needed.
+They use the Chrome driver and require the application to be running in order to run.
+
+- I love that FakeItEasy is included in the Test project, I think
+this is the syntactically the most straight-forward mocking framework.
+
+- But on unit testing while I did use FakeItEasy to create a mock of PersonService in the beginning of a unit test... 
+the problem is that there is no logic to test in these classes.  
+I'm doing the less is more, not writing unit tests
+for the sake of it because in the real world that tends to make solutions brittle and
+hard to maintain.
+
+- The system/unit tests would be split into separate projects, also different according to which 
+library being tested.
+
+I do know that the client should be handling server-side validation fails 
+in event they subvert the client side validation.  I guess I felt that
+coding to make it easier for those who were deliberately by-passing the client-side validation
+was low on the priorities list.  :-)
+
+And the edit-person component would be in reactive forms for an enterprise application.
+Devs often say "but it's small, template is fine", but usually the form grows due to business
+demands and you end up will a lot of unmanageable form/validation spaghetti.
+However template forms was the easiest to get the job done here.
+
+Anyway, thanks again.

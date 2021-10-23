@@ -1,0 +1,33 @@
+
+<div [class.mat-elevation-z1]="true" class="headingContainer">
+  <h1 class="headline">People Manager</h1>
+</div>
+<p>Please see the "read me - solution answer.txt" file</p>
+<button id="NewPersonButton" mat-stroked-button color="primary"
+        (click)="addPerson(newPerson)">Add new person</button>
+<br /><br />
+<mat-grid-list cols="2" rowHeight="200px" gutterSize="8" style="width: 700px;">
+
+  <mat-grid-tile *ngFor="let person of people">
+    <mat-card >
+      <mat-card-title>
+        {{person.name}}
+      </mat-card-title>
+      <mat-card-content>
+        <table class="personDetailsTable">
+          <tr><td>Address</td><td><div>{{ person.address }}</div></td></tr>
+          <tr><td>D.o.B.</td><td>{{ person.dateOfBirth | date: 'dd/MM/yyyy' }}</td></tr>
+          <tr><td>Ice Cream</td><td>{{ person.favouriteIceCream }}</td></tr>
+        </table>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <button mat-stroked-button color="primary" (click)="editPerson(person)" class="editPersonButton">Edit</button>
+        <button mat-stroked-button color="warn" (click)="deletePerson(person.id)" class="deletePersonButton">Delete</button>
+
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>
+

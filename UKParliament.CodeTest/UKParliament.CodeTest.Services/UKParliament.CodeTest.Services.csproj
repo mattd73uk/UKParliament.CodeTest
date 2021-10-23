@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UKParliament.CodeTest.Data\UKParliament.CodeTest.Data.csproj" />
+    <ProjectReference Include="..\UKParliament.CodeTest.Domain\UKParliament.CodeTest.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
